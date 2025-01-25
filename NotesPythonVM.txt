@@ -1,0 +1,24 @@
+EMACS: change font size ctrl x then + or 
+using mouse: ctrl then use wheel
+
+# create a python virtual environments to isolate
+# project development from OS library version mismatches
+
+#add VM capability to python
+sudo apt install python3-venv
+
+# goto your development work folder
+# create a VM that has the latest OS python libs
+python3 -m .venv /home/jvogel/Documents/aiWorkrepo/metaflowWork/.venv
+
+# When adding third party libraries:
+# Install thirdPartyLib python libs into virtual environment:
+.venv/bin/pip install thirdPartyLib
+# update thirdPartyLib libs if needed
+.venv/bin/pip install --upgrade thirdPartyLib
+
+# activate the virtual environment
+source .venv/bin/activate
+(.venv) jvogel > which python3
+(.venv) jvogel > deactivate     #exit virtual environment
+

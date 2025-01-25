@@ -1,0 +1,18 @@
+EMACS: change font size ctrl x then + or 
+using mouse: ctrl then use wheel
+
+https://docs.metaflow.org/getting-started/install
+
+# go to aiWorkrepo: Get metaflow from github:
+cd Documents/aiWorkrepo/metaflowWork
+git clone https://github.com/Netflix/metaflow.git
+git clone https://github.com/Netflix/user2020-metaflow-tutorial.git
+
+# create a python virtual environment for running the metaFlow
+# see Notes on how to create python VMs
+
+# Install metaflow python libs into virtual environment:
+.venv/bin/pip install metaflow # add python libs for metaflow
+# update metaflow libs if needed
+.venv/bin/pip install --upgrade metaflow
+
