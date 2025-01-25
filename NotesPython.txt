@@ -1,6 +1,18 @@
 EMACS: change font size ctrl x then + or 
 using mouse: ctrl then use wheel
 
+AI: look into installing jupiter notebook
+apparently this tool displays tabular data well...
+
+# start working with pandas
+cd /home/jvogel/Documents/aiWorkrepo/dataScienceWork
+python3 -m venv .venv
+.venv/bin/pip install pandas
+#Installed pkgs: pytz, tzdata, six, numpy, python-dateutil, pandas
+.venv/bin/pip install --upgrade pandas
+source .venv/bin/activate
+python3 test.py
+
 # create a python virtual environments to isolate
 # project development from OS library version mismatches
 
