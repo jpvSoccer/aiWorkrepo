@@ -4,6 +4,15 @@ using mouse: ctrl then use wheel
 AI: look into installing jupiter notebook
 apparently this tool displays tabular data well...
 
+# plotting in python
+# first install the plotting library into VM
+.venv/bin/pip install matplotlib
+.venv/bin/pip install numpy
+
+# to enable plotting in python (without running in vscode...)
+.venv/bin/pip install PyQt6
+
+
 # start working with pandas
 cd /home/jvogel/Documents/aiWorkrepo/dataScienceWork
 python3 -m venv .venv
