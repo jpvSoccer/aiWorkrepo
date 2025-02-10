@@ -1,3 +1,5 @@
 # to activate the virtual environment
 # type this in your shell
 source .venv/bin/activate
+cd work
+
