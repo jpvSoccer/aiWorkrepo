@@ -29,8 +29,6 @@ parser = argparse.ArgumentParser(
    description='Program to analyze real estate data \
    ',
    epilog='send feedback to john.vogel123@gmail.com \
-   \nNOTE: Alt F4 will close the plot if it fills the screen! \
-   \nNOTE: PYTHONPATH needs to be defined if running outside scripts folder \
 ')
 parser.parse_args()
 
@@ -49,24 +47,32 @@ df = pd.read_csv(csvFile)
 #df = pd.read_csv(csvFile, nrows=2)
 #mf.printCsvStats(df) # homegrown function to print some stats
 
-print("JPV: the average sqft: $",df.sqft_living.mean())
-print("JPV: median sqft: $",df.sqft_living.median())
-print("JPV: the average sqft_lot: $",df.sqft_lot.mean())
-print("JPV: median sqft_lot: $",df.sqft_lot.median())
-print("JPV: the average price: $",f"{int(df.price.mean()):,}")
-print("JPV: median price: $",f"{int(df.price.median()):,}")
+#print("JPV: the average sqft: $",df.sqft_living.mean())
+#print("JPV: median sqft: $",df.sqft_living.median())
+#print("JPV: the average sqft_lot: $",df.sqft_lot.mean())
+#print("JPV: median sqft_lot: $",df.sqft_lot.median())
+#print("JPV: the average price: $",f"{int(df.price.mean()):,}")
+#print("JPV: median price: $",f"{int(df.price.median()):,}")
 
-fig, axes = plt.subplots(nrows=4, ncols=1, figsize=(10, 8))
+fig, axes = plt.subplots(nrows=4, ncols=2, figsize=(10, 10))
 fig.supxlabel("Real Estate Data Analysis", fontsize=20, color='blue')
 plt.subplots_adjust(hspace=0.6)
 
-axes[0].boxplot(df.sqft_living, vert=False)
-axes[0].set_title('sqft_living')
-axes[1].boxplot(df.price, vert=False)
-axes[1].set_title('PRICE')
-axes[2].boxplot(df.condition, vert=False)
-axes[2].set_title('condition')
-axes[3].boxplot(df.sqft_lot, vert=False)
-axes[3].set_title('sqft_lot')
+axes[0,0].boxplot(df.sqft_living, vert=False)
+axes[0,0].set_title('sqft_living',color='r', fontweight='bold', fontsize=25)
+axes[1,0].boxplot(df.sqft_lot, vert=False)
+axes[1,0].set_title('sqft_lot',color='r', fontweight='bold', fontsize=25)
+axes[2,0].boxplot(df.sqft_basement, vert=False)
+axes[2,0].set_title('sqft_basement',color='r', fontweight='bold', fontsize=25)
+axes[3,0].boxplot(df.sqft_above, vert=False)
+axes[3,0].set_title('sqft_above',color='r', fontweight='bold', fontsize=25)
+axes[0,1].boxplot(df.price, vert=False)
+axes[0,1].set_title('price',color='b', fontweight='bold', fontsize=25)
+axes[1,1].boxplot(df.yr_built, vert=False)
+axes[1,1].set_title('yr_built',color='b', fontweight='bold', fontsize=25)
+axes[2,1].boxplot(df.floors, vert=False)
+axes[2,1].set_title('floors',color='b', fontweight='bold', fontsize=25)
+axes[3,1].boxplot(df.sqft_living15, vert=False)
+axes[3,1].set_title('sqft_living15',color='b', fontweight='bold', fontsize=25)
 
 plt.show()
