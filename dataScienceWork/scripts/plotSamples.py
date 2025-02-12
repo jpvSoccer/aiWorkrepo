@@ -27,7 +27,6 @@ parser = argparse.ArgumentParser(
    usage='\n --no additional arguments are needed',
    prog='plotSamples.py',
    description='Program to show python basic plotting capabilities \
-   \n--REPORT 1: calc mean median and mode \
    \n--PLOT 1: a csv file is loaded and a scatter plot is made \
    \n--PLOT 2: random data is created and a scatter plot is made \
    \n--PLOTS 3-6: plotting using trig and log and squared function \
@@ -40,16 +39,34 @@ parser = argparse.ArgumentParser(
 parser.parse_args()
 
 print("JPV: Loading csv into dataframe")
+#  1  2     3     4        5        6            7
+# id,date,price,bedrooms,bathrooms,sqft_living,sqft_lot,
+#  8         9       10     11       12     13
+# floors,waterfront,view,condition,grade,sqft_above,
+#  14             15        16          17     18  19     20            21
+# sqft_basement,yr_built,yr_renovated,zipcode,lat,long,sqft_living15,sqft_lot15
+
 print("JPV: Creating scatter plot from dataframe")
 ##################################################
 # Read csv into a dataframe and setup plot
 df = pd.read_csv("../data/raw-house-data.csv")
 #df = pd.read_csv("../data/raw-house-data.csv", nrows=2)
 #mf.printCsvStats(df) # homegrown function to print some stats
-plt.scatter(df.id, df.price, c="#000000")
-plt.scatter(df.price, df.bedrooms, c="red")
-#plt.show()
 
+fig, axes = plt.subplots(nrows=1, ncols=4, figsize=(10, 8))
+fig.supxlabel("Box and Violin Plots", fontsize=20, color='blue') # add labels to the canvas
+
+axes[0].boxplot(df.id)
+axes[0].set_title('ID')
+axes[1].boxplot(df.price)
+axes[1].set_title('PRICE')
+axes[2].boxplot(df.condition)
+axes[2].set_title('condition')
+axes[3].boxplot(df.sqft_living)
+axes[3].set_title('sqft_living')
+
+plt.show()
+print(df.condition)
 print("JPV: Creating random data scatter plot")
 print("JPV: Make scatter plot from random")
 ##################################################
@@ -108,5 +125,5 @@ ax.set_title('A single plot')
 print("JPV: Drawing plots")
 ##################################################
 # Show the plots
-plt.show()
+#plt.show()
 
