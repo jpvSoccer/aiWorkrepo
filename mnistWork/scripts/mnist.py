@@ -3,20 +3,19 @@
 #MNIST code comes from here
 #https://www.kaggle.com/code/ashishk1331/mnist-dataset?scriptVersionId=224441574&cellId=3
 
-# This Python 3 environment comes with many helpful analytics libraries installed
-# It is defined by the kaggle/python Docker image: https://github.com/kaggle/docker-python
-# For example, here's several helpful packages to load
-
 import numpy as np # linear algebra
 import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
 import os
 import struct
+import tensorflow as tf
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense, Input
+from tensorflow.keras.callbacks import EarlyStopping
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import classification_report
 
-# Input data files are available in the read-only "../input/" directory
-# For example, running this (by clicking run or pressing Shift+Enter) will list all files under the input directory
-
-#for dirname, _, filenames in os.walk('/kaggle/input'):
-for dirname, _, filenames in os.walk('/home/jvogel/Documents/aiWorkrepo/mnistWork/data'):
+#find all the training data for information purposes
+for dirname, _, filenames in os.walk('../data'):
     for filename in filenames:
         print(os.path.join(dirname, filename))
 
@@ -49,11 +48,6 @@ print(train_df.head()) # Print the first few rows
 print(train_df.shape)  # Print the shape of the DataFrame
 
 
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense, Input
-from tensorflow.keras.callbacks import EarlyStopping
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import classification_report
 
 random_state = 42
 
