@@ -20,6 +20,7 @@ python3 -m venv .venv
 
 #activate the virtual environment in your shell
 source .venv/bin/activate
+deactivate
 
 #test install
 python3 test.py
