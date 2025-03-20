@@ -15,37 +15,53 @@ import numpy as np
 # coolwarm, RdBu
 #tab10, Set1
 
-'''
-matrix = np.array([[1, 2, 3],[4, 5, 6],[7, 8, 9]])
-plt.imshow(matrix, cmap='viridis')
-plt.colorbar()
-plt.title("Matrix Plot")
-plt.xlabel("Columns")
-plt.ylabel("Rows")
-plt.show()
-'''
+V_3x1_sum_all_rows = np.array([[1], [1], [1]])
+V_3x1_sum_row1 = np.array([[1], [0], [0]])
+V_3x1_grab_col1 = np.array([1, 0, 0])
+V_3x1_grab_col2 = np.array([0, 1, 0])
+V_3x1_grab_col3 = np.array([0, 0, 1])
 
-V1 = np.array([1, 1])
+matrix_3x3_null = np.array([[0, 0, 0],[0, 0, 0],[0, 0, 0]])
+matrix_3x3_identity = np.array([[1, 0, 0],[0, 1, 0],[0, 0, 1]])
+matrix_3x3_swap_r1_r2 = np.array([[0, 1, 0],[1, 0, 0],[0, 0, 1]])
+matrix_3x3_swap_r1_r3 = np.array([[0, 0, 1],[0, 1, 0],[1, 0, 0]])
+matrix_3x3_swap_r2_r3 = np.array([[1, 0, 0],[0, 0, 1],[0, 1, 0]])
+matrix_3x3_reverse_rows = np.array([[0, 0, 1],[0, 1, 0],[1, 0, 0]])
+matrix_3x3_rotate_rows = np.array([[0, 1, 0],[0, 0, 1],[1, 0, 0]])
 
-# 1  2
-# 3  4
-#                   [[row1] , [row2]]
-matrix_2x2_a = np.array([[1, 2], [3, 4]])
+matrix_3x3_B = np.array([[1, 1, 1],[2, 2, 2],[3, 3, 3]])
+matrix_3x3_B_1 = np.array([[1, 2, 3],[4, 5, 6],[7, 8, 9]])
 
-# 5  6
-# 7  8
-#                   [[row1] , [row2]]
-matrix_2x2_b = np.array([[5, 6], [7, 8]])
+# 3x3 by 3x3 work
+#mA = matrix_3x3_A
+mA = matrix_3x3_identity
+mA = matrix_3x3_null
+mA = matrix_3x3_reverse_rows
+mA = matrix_3x3_rotate_rows
+mA = matrix_3x3_swap_r1_r2
+mA = matrix_3x3_swap_r1_r3
+mA = matrix_3x3_swap_r2_r3
+mA = matrix_3x3_rotate_rows
 
-result_add = matrix_2x2_a + matrix_2x2_b
-result_mult = matrix_2x2_a @ matrix_2x2_b
-result_dot = np.dot(matrix_2x2_a , matrix_2x2_b)
-print("\n", matrix_2x2_a, "\nplus\n", matrix_2x2_b, "\nis\n", result_add, "\n" )
-print( matrix_2x2_a, "\ntimes\n", matrix_2x2_b, "\nis\n", result_mult, "\n" )
-print( matrix_2x2_a, "\ndot\n", matrix_2x2_b, "\nis\n", result_mult, "\n" )
+mB = matrix_3x3_B
+
+# 3x3 by 3x1 work
+mA = matrix_3x3_B
+#mA = matrix_3x3_B_1
+mB = matrix_3x3_identity
+mB = matrix_3x3_null
+mB = V_3x1_sum_all_rows
+mB = V_3x1_grab_col3
+
+#result_add = mA + mB
+result_mult = mA @ mB
+#print("\n", mA, "\nplus\n", mB, "\nis\n", result_add, "\n" )
+print( mA, "\ntimes\n", mB, "\nis\n", result_mult, "\n" )
+
 #result = np.dot(matrix2, V1)
 #print(result)
-#img1=plt.imshow(matrix_2x2_a, cmap='Set1')
+
+#img1=plt.imshow(mA, cmap='Set1')
 #plt.colorbar(img1, label="Data Values" )
 #plt.title("Matrix Plot")
 #plt.xlabel("Columns")
