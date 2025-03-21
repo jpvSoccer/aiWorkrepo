@@ -10,57 +10,55 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-# cmap values
-# viridis, plasma, gray, Blues, Greens
-# coolwarm, RdBu
-#tab10, Set1
+M_3x1_sum_all_rows = np.array([[1], [1], [1]])
+M_3x1_sum_row1 = np.array([[1], [0], [0]])
+M_1x3_grab_col1 = np.array([1, 0, 0])
+M_1x3_grab_col2 = np.array([0, 1, 0])
+M_1x3_grab_col3 = np.array([0, 0, 1])
 
-V_3x1_sum_all_rows = np.array([[1], [1], [1]])
-V_3x1_sum_row1 = np.array([[1], [0], [0]])
-V_3x1_grab_col1 = np.array([1, 0, 0])
-V_3x1_grab_col2 = np.array([0, 1, 0])
-V_3x1_grab_col3 = np.array([0, 0, 1])
+M_1x3 = np.array([0, 0, 1]) ; print("1x3\n", M_1x3)
+M_3x1 = np.array([[0], [0], [1]]) ; print("3x1\n",M_3x1)
+M_3x2 = np.array([[0,0], [0,0], [1,0]]) ; print("3x2\n",M_3x2)
 
-matrix_3x3_null = np.array([[0, 0, 0],[0, 0, 0],[0, 0, 0]])
-matrix_3x3_identity = np.array([[1, 0, 0],[0, 1, 0],[0, 0, 1]])
-matrix_3x3_swap_r1_r2 = np.array([[0, 1, 0],[1, 0, 0],[0, 0, 1]])
-matrix_3x3_swap_r1_r3 = np.array([[0, 0, 1],[0, 1, 0],[1, 0, 0]])
-matrix_3x3_swap_r2_r3 = np.array([[1, 0, 0],[0, 0, 1],[0, 1, 0]])
-matrix_3x3_reverse_rows = np.array([[0, 0, 1],[0, 1, 0],[1, 0, 0]])
-matrix_3x3_rotate_rows = np.array([[0, 1, 0],[0, 0, 1],[1, 0, 0]])
+M_3x3_null = np.array([[0, 0, 0],[0, 0, 0],[0, 0, 0]])
+M_3x3_identity = np.array([[1, 0, 0],[0, 1, 0],[0, 0, 1]])
+M_3x3_swap_r1_r2 = np.array([[0, 1, 0],[1, 0, 0],[0, 0, 1]])
+M_3x3_swap_r1_r3 = np.array([[0, 0, 1],[0, 1, 0],[1, 0, 0]])
+M_3x3_swap_r2_r3 = np.array([[1, 0, 0],[0, 0, 1],[0, 1, 0]])
+M_3x3_reverse_rows = np.array([[0, 0, 1],[0, 1, 0],[1, 0, 0]])
+M_3x3_rotate_rows = np.array([[0, 1, 0],[0, 0, 1],[1, 0, 0]])
 
-matrix_3x3_B = np.array([[1, 1, 1],[2, 2, 2],[3, 3, 3]])
-matrix_3x3_B_1 = np.array([[1, 2, 3],[4, 5, 6],[7, 8, 9]])
+M_3x3_B = np.array([[1, 1, 1],[2, 2, 2],[3, 3, 3]])
+M_3x3_B_1 = np.array([[1, 2, 3],[4, 5, 6],[7, 8, 9]])
 
 # 3x3 by 3x3 work
-#mA = matrix_3x3_A
-mA = matrix_3x3_identity
-mA = matrix_3x3_null
-mA = matrix_3x3_reverse_rows
-mA = matrix_3x3_rotate_rows
-mA = matrix_3x3_swap_r1_r2
-mA = matrix_3x3_swap_r1_r3
-mA = matrix_3x3_swap_r2_r3
-mA = matrix_3x3_rotate_rows
-
-mB = matrix_3x3_B
+#mA = M_3x3_identity; print("JPV: using 3x3 identity matrix")
+#mA = M_3x3_null
+#mA = M_3x3_reverse_rows
+#mA = M_3x3_rotate_rows
+#mA = M_3x3_swap_r1_r2
+#mA = M_3x3_swap_r1_r3
+#mA = M_3x3_swap_r2_r3
+#mA = M_3x3_rotate_rows
 
 # 3x3 by 3x1 work
-mA = matrix_3x3_B
-#mA = matrix_3x3_B_1
-mB = matrix_3x3_identity
-mB = matrix_3x3_null
-mB = V_3x1_sum_all_rows
-mB = V_3x1_grab_col3
+#mB = M_3x3_identity
+#mB = M_3x3_null
+#mB = M_3x1_sum_all_rows
+#mA = M_3x3_B
 
-#result_add = mA + mB
-result_mult = mA @ mB
-#print("\n", mA, "\nplus\n", mB, "\nis\n", result_add, "\n" )
-print( mA, "\ntimes\n", mB, "\nis\n", result_mult, "\n" )
+#mA = M_1x3; print("JPV: grabbing row 3)")
+mB = M_3x3_B
+#mA = M_3x3_B_1
+mA = M_1x3_grab_col1; print("JPV: using M1x3 to grab 3x3 column 1")
+#mA = M_1x3_grab_col2; print("JPV: using M1x3 to grab 3x3 column 2")
+#mA = M_.i1x3_grab_col3; print("JPV: using M1x3 to grab 3x3 column 3")
 
-#result = np.dot(matrix2, V1)
-#print(result)
+print("\nJPV: calculating...")
+print( mA, "\ntimes\n", mB, "\nis\n", mA @ mB, "\n" )
 
+# cmap values
+# viridis, plasma, gray, Blues, Greens, coolwarm, RdBu, tab10, Set1
 #img1=plt.imshow(mA, cmap='Set1')
 #plt.colorbar(img1, label="Data Values" )
 #plt.title("Matrix Plot")
