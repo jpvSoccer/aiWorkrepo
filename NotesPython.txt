@@ -1,8 +1,17 @@
 EMACS: change font size ctrl x then + or 
 using mouse: ctrl then use wheel
 
-AI: look into installing jupiter notebook
-apparently this tool displays tabular data well...
+# put this in .bashrc to tell python where to look for source
+#PYTHONPATH=/home/jvogel/Documents/aiWorkrepo/dataScienceWork/scripts
+#export PYTHONPATH
+
+# activate the virtual environment
+source .venv/bin/activate
+(.venv) jvogel > which python3
+(.venv) jvogel > deactivate     #exit virtual environment
+
+pip list   # show all installed library versions
+pip show numpy | more    # get a detailed report on a library
 
 # plotting in python
 # first install the plotting library into VM
@@ -13,8 +22,7 @@ apparently this tool displays tabular data well...
 # to enable plotting in python (without running in vscode...)
 .venv/bin/pip install PyQt6
 
-
-# start working with pandas
+# start working with pandas in VM
 cd /home/jvogel/Documents/aiWorkrepo/dataScienceWork
 python3 -m venv .venv
 .venv/bin/pip install pandas
@@ -39,8 +47,4 @@ python3 -m .venv /home/jvogel/Documents/aiWorkrepo/metaflowWork/.venv
 # update thirdPartyLib libs if needed
 .venv/bin/pip install --upgrade thirdPartyLib
 
-# activate the virtual environment
-source .venv/bin/activate
-(.venv) jvogel > which python3
-(.venv) jvogel > deactivate     #exit virtual environment
 

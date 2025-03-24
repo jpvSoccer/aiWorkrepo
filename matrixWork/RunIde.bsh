@@ -1,1 +1,3 @@
+#!/bin/bash
+
 pycharm-community 2> /tmp/junk.log &
