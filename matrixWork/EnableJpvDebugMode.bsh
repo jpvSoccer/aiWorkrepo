@@ -1,0 +1,10 @@
+#!/bin/bash
+
+JPVDEBUG=True
+export JPVDEBUG
+
+PYTHONPATH=/home/jvogel/Documents/aiWorkrepo/matrixWork/source
+export PYTHONPATH
+
+
+
