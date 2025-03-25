@@ -42,8 +42,22 @@ def defineAllMatrices():
 #     I20=(A20*B00) + (A21*B10) + (A22*B20)
 #     I21=(A20*B01) + (A21*B11) + (A22*B21)
 #     I22=(A20*B02) + (A21*B12) + (A22*B22)
+# Identity Matrix
+# 1 0 0
+# 0 1 0
+# 0 0 1
+# A =
+#    1 2 −1
+#    2 1 2
+#    −1 2 1
+# A-1 =
+#     3/16 1/4 −5/16
+#     1/4 0 1/4
+#     −5/16 1/4 3/16
 
     global M_3x3_xxx_xxx_xxx_debug
+    global M_3x3_xxx_xxx_xxx_debug_1
+    global M_3x3_xxx_xxx_xxx_debug_2
     global M_3x3_000_000_000
     global M_3x3_100_000_000
     global M_3x3_100_010_001
@@ -56,6 +70,9 @@ def defineAllMatrices():
     global M_3x3_reverse_rows, M_3x3_rotate_rows
 
     M_3x3_xxx_xxx_xxx_debug = np.array([[0, 0, 1], [0, 0, 0], [0, 0, 0]])
+    #this is a matrix and its inverse; when multiplies you get the identity matrix
+    M_3x3_xxx_xxx_xxx_debug_1 = np.array([[1, 2, -1], [2, 1, 2], [-1, 2, 1]])
+    M_3x3_xxx_xxx_xxx_debug_2 = np.array([[3/16, 1/4, -5/16], [1/4, 0, 1/4], [-5/16, 1/4, 3/16]])
 
     M_3x1_sum_all_rows = np.array([[1], [1], [1]])
     M_3x1_sum_row1 = np.array([[1], [0], [0]])

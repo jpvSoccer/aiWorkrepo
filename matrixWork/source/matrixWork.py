@@ -12,12 +12,16 @@ import jpvAssertions
 #mf.getPythonPath()
 mf.defineAllMatrices()
 
-mA = mf.M_3x3_xxx_xxx_xxx_debug; print("JPV: using 3x3 debug matrix")
+# when mutiplied you get the identity matrix
+mB = mf.M_3x3_xxx_xxx_xxx_debug_1; print("JPV: A")
+mA = mf.M_3x3_xxx_xxx_xxx_debug_2; print("JPV: Ainverse")
+
+#mA = mf.M_3x3_xxx_xxx_xxx_debug; print("JPV: using 3x3 debug matrix")
 #mA = mf.M_3x3_000_000_000; print("JPV: using 3x3 null matrix")
 #mA = mf.M_3x3_100_010_001; print("JPV: using 3x3 identity matrix")
 #mA = mf.M_3x3_100_000_000; print("JPV: using 3x3 null matrix")
 #mB = mf.mf.M_3x3_111_222_333; print("JPV: using M_3x3_111_222_333 matrix")
-mB = mf.M_3x3_123_456_789; print("JPV: using M_3x3_123_456_789 matrix")
+#mB = mf.M_3x3_123_456_789; print("JPV: using M_3x3_123_456_789 matrix")
 #mA = mf.M_3x3_reverse_rows
 #mA = mf.M_3x3_rotate_rows
 #mA = mf.M_3x3_swap_r1_r2
