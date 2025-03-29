@@ -18,18 +18,10 @@ def enableJpvDebuggingFeatures():
 
 def defineAllMatrices():
 
-#     A3x3 TIMES B3x3 multiplication
-#     A00 A01 A02
-#     A10 A11 A12
-#     A20 A21 A22
-#    times
-#     B00 B01 B02
-#     B10 B11 B12
-#     B20 B21 B22
-#    equals
-#     I00 I01 I02
-#     I10 I11 I12
-#     I20 I21 I22
+#     P3x3 permutation matrix
+#     P11 P12 P13
+#     P21 P22 P23
+#     P31 P32 P33
 
 #     I00=(A00*B00) + (A01*B10) + (A02*B20)
 #     I01=(A00*B01) + (A01*B11) + (A02*B21)
