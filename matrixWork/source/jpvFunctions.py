@@ -28,9 +28,10 @@ def defineAllMatrices():
 #     A21 A22 A23
 #     A31 A32 A33
 
-#     I10=(A10*B00) + (A11*B10) + (A12*B20)
-#     I11=(A10*B01) + (A11*B11) + (A12*B21)
-#     I12=(A10*B02) + (A11*B12) + (A12*B22)
+#     U3x3 result
+#     U11 U12 U13
+#     U21 U22 U23
+#     U31 U32 U33
 
 #     Multiplication with Permutation on LEFT!!!
 #     this results in "ROW" manipulation
@@ -39,53 +40,56 @@ def defineAllMatrices():
 #     P21=-1,P22=1,P23=0 means take one of row 1 away from row 2
 #     P31=-2 means subtract 2 of row 1 from row 3
 
-#     I11=(P11*A11) + (P12*A21) + (P13*A31)
-#     I12=(P11*A12) + (P12*A22) + (P13*A32)
-#     I13=(P11*A13) + (P12*A23) + (P13*A33)
+#     U11=(P11*A11) + (P12*A21) + (P13*A31)
+#     U12=(P11*A12) + (P12*A22) + (P13*A32)
+#     U13=(P11*A13) + (P12*A23) + (P13*A33)
 #
-#     I21=(P21*A11) + (P22*A21) + (P23*A32)
-#     I22=(P21*A12) + (P22*A22) + (P23*A32)
-#     I23=(P21*A13) + (P22*A23) + (P23*A33)
+#     U21=(P21*A11) + (P22*A21) + (P23*A32)
+#     U22=(P21*A12) + (P22*A22) + (P23*A32)
+#     U23=(P21*A13) + (P22*A23) + (P23*A33)
 #
-#     I31=(P31*A11) + (P32*A23) + (P33*A31)
-#     I32=(P31*A12) + (P32*A22) + (P33*A32)
-#     I33=(P31*A13) + (P32*A23) + (P33*A33)
+#     U31=(P31*A11) + (P32*A23) + (P33*A31)
+#     U32=(P31*A12) + (P32*A22) + (P33*A32)
+#     U33=(P31*A13) + (P32*A23) + (P33*A33)
 # PI Identity Matrix leaves A unchanged
 # take one of each row
 # 1 0 0
 # 0 1 0
 # 0 0 1
-# A =
-#    1 2 −1
-#    2 1 2
-#    −1 2 1
-# A-1 =
-#     3/16 1/4 −5/16
-#     1/4 0 1/4
-#     −5/16 1/4 3/16
+# clear all rows
+# 0 0 0
+# 0 0 0
+# 0 0 0
+# swap row 1 with row 2
+# 0 1 0
+# 1 0 0
+# 0 0 1
 
-    global M_3x3_xxx_xxx_xxx_debug
-    global M_3x3_xxx_xxx_xxx_debug_1
-    global M_3x3_xxx_xxx_xxx_debug_2
     global M_3x3_000_000_000
     global M_3x3_100_000_000
     global M_3x3_100_010_001
     global M_3x3_111_222_333
     global M_3x3_123_456_789
-    global M_3x1_sum_all_rows, M_3x1_sum_row1, M_3x1
+    global M_3x1_sum_all_rows, M_3x1_sum_row1
     global M_1x3_100_grab_row1, M_1x3_010_grab_row2, M_1x3_001_grab_row3
     global M_3x2
     global M_3x3_swap_r1_r2, M_3x3_swap_r1_r3, M_3x3_swap_r2_r3
     global M_3x3_reverse_rows, M_3x3_rotate_rows
 
+    global M_3x3_xxx_xxx_xxx_debug
+    global M_3x3_xxx_xxx_xxx_debug_1
+    global M_3x3_xxx_xxx_xxx_debug_2
+    global M_3x1_xxx_debug, M_1x3_xxx_debug
+
+    M_3x1_xxx_debug = np.array([[1], [2], [3]])
+    M_1x3_xxx_debug = np.array([[4, 5, 6]])
     M_3x3_xxx_xxx_xxx_debug = np.array([[0, 0, 1], [0, 0, 0], [0, 0, 0]])
     #this is a matrix and its inverse; when multiplies you get the identity matrix
-    M_3x3_xxx_xxx_xxx_debug_1 = np.array([[1, 2, -1], [2, 1, 2], [-1, 2, 1]])
-    M_3x3_xxx_xxx_xxx_debug_2 = np.array([[3/16, 1/4, -5/16], [1/4, 0, 1/4], [-5/16, 1/4, 3/16]])
+    M_3x3_xxx_xxx_xxx_debug_1 = np.array([[1, 0, 0], [0, 0, 0], [0, 0, 0]])
+    M_3x3_xxx_xxx_xxx_debug_2 = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
 
     M_3x1_sum_all_rows = np.array([[1], [1], [1]])
     M_3x1_sum_row1 = np.array([[1], [0], [0]])
-    M_3x1 = np.array([[0], [0], [1]])
 
     M_1x3_100_grab_row1 = np.array([1, 0, 0])
     M_1x3_010_grab_row2 = np.array([0, 1, 0])

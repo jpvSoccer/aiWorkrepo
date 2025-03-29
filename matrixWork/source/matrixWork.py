@@ -13,8 +13,10 @@ import jpvAssertions
 mf.defineAllMatrices()
 
 # when mutiplied you get the identity matrix
-mB = mf.M_3x3_xxx_xxx_xxx_debug_1; print("JPV: A")
-mA = mf.M_3x3_xxx_xxx_xxx_debug_2; print("JPV: Ainverse")
+mA = mf.M_3x3_xxx_xxx_xxx_debug_1; #print("JPV: A")
+mB = mf.M_3x3_xxx_xxx_xxx_debug_2; #print("JPV: Ainverse")
+#mB = mf.M_3x1_xxx_debug
+#mA = mf.M_1x3_xxx_debug
 
 #mA = mf.M_3x3_xxx_xxx_xxx_debug; print("JPV: using 3x3 debug matrix")
 #mA = mf.M_3x3_000_000_000; print("JPV: using 3x3 null matrix")
@@ -30,9 +32,13 @@ mA = mf.M_3x3_xxx_xxx_xxx_debug_2; print("JPV: Ainverse")
 #mA = mf.M_3x3_rotate_rows
 #mB = mf.M_3x1_sum_all_rows
 
+
+#print( mA, "\ntimes\n", mB, "\nis\n")
+
 #mA = mf.M_1x3_100_grab_row1; print("JPV: using M1x3 to grab 3x3 row 1")
 #mA = mf.M_1x3_010_grab_row2; print("JPV: using M1x3 to grab 3x3 row 2")
 #mA = mf.M_1x3_001_grab_row3; print("JPV: using M1x3 to grab 3x3 row 3")
 
 print("\nJPV: calculating...")
 print( mA, "\ntimes\n", mB, "\nis\n", mA @ mB, "\n" )
+#print( mA, "\ntimes\n", mB, "\nis\n", np.dot(mA, mB), "\n" )
