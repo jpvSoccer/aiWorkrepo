@@ -39,10 +39,26 @@ def defineAllMatrices():
 #     I11=(A10*B01) + (A11*B11) + (A12*B21)
 #     I12=(A10*B02) + (A11*B12) + (A12*B22)
 
-#     I20=(A20*B00) + (A21*B10) + (A22*B20)
-#     I21=(A20*B01) + (A21*B11) + (A22*B21)
-#     I22=(A20*B02) + (A21*B12) + (A22*B22)
-# Identity Matrix
+#     Multiplication with Permutation on LEFT!!!
+#     this results in "ROW" manipulation
+#     operate on row 2: add row 1 (P21=1) to row 2 (P22=1 and P23-0)
+#     P12=2 means add 2 of row 2 to row 1
+#     P21=-1,P22=1,P23=0 means take one of row 1 away from row 2
+#     P31=-2 means subtract 2 of row 1 from row 3
+
+#     I11=(P11*A11) + (P12*A21) + (P13*A31)
+#     I12=(P11*A12) + (P12*A22) + (P13*A32)
+#     I13=(P11*A13) + (P12*A23) + (P13*A33)
+#
+#     I21=(P21*A11) + (P22*A21) + (P23*A32)
+#     I22=(P21*A12) + (P22*A22) + (P23*A32)
+#     I23=(P21*A13) + (P22*A23) + (P23*A33)
+#
+#     I31=(P31*A11) + (P32*A23) + (P33*A31)
+#     I32=(P31*A12) + (P32*A22) + (P33*A32)
+#     I33=(P31*A13) + (P32*A23) + (P33*A33)
+# PI Identity Matrix leaves A unchanged
+# take one of each row
 # 1 0 0
 # 0 1 0
 # 0 0 1
