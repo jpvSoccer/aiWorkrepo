@@ -1,4 +1,6 @@
-
+"""
+jvogel functions for matrix work
+"""
 import jpvFunctions as mf
 import numpy as np
 mf.enableJpvDebuggingFeatures()
