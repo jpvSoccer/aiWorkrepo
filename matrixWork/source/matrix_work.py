@@ -1,25 +1,27 @@
-# John Vogel 02/28/2025 john.vogel123@gmail.com
+"""
+John Vogel 02/28/2025 john.vogel123@gmail.com
 
-# program to study basic matrix operations to try to understand
-# linear algebra
+program to study basic matrix operations to try to understand
+linear algebra
+"""
 
-import matplotlib.pyplot as plt
-import numpy as np
-import os
+#import os
+#import matplotlib.pyplot as plt
+#import numpy as np
 import jpvFunctions as mf
-import jpvAssertions
+#import jpvAssertions
 
 #mf.getPythonPath()
 mf.defineAllMatrices()
 
 # when mutiplied you get the identity matrix
-mA = mf.M_3x3_xxx_xxx_xxx_debug_1; #print("JPV: A")
-mB = mf.M_3x3_xxx_xxx_xxx_debug_2; #print("JPV: Ainverse")
+mA = mf.M_3x3_xxx_xxx_xxx_debug_1 #print("JPV: A")
+mB = mf.M_3x3_xxx_xxx_xxx_debug_2 #print("JPV: Ainverse")
 #mB = mf.M_3x1_xxx_debug
 #mA = mf.M_1x3_xxx_debug
 
-#mA = mf.M_3x3_xxx_xxx_xxx_debug; print("JPV: using 3x3 debug matrix")
-#mA = mf.M_3x3_000_000_000; print("JPV: using 3x3 null matrix")
+#mA = mf.M_3x3_xxx_xxx_xxx_debug print("JPV: using 3x3 debug matrix")
+#mA = mf.M_3x3_000_000_000 print("JPV: using 3x3 null matrix")
 #mA = mf.M_3x3_100_010_001; print("JPV: using 3x3 identity matrix")
 #mA = mf.M_3x3_100_000_000; print("JPV: using 3x3 null matrix")
 #mB = mf.mf.M_3x3_111_222_333; print("JPV: using M_3x3_111_222_333 matrix")
