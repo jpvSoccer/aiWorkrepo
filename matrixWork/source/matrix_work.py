@@ -12,7 +12,7 @@ import jpv_functions as mf
 #import jpvAssertions
 
 #mf.getPythonPath()
-mf.defineAllMatrices()
+mf.define_all_matrices()
 
 # when mutiplied you get the identity matrix
 mA = mf.M_3x3_xxx_xxx_xxx_debug_1 #print("JPV: A")

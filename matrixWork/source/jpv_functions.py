@@ -23,9 +23,12 @@ def enable_jpv_debugging_features():
     else:
         print("JPVDEBUG off")
 
-def defineAllMatrices():
+def define_all_matrices():
+    """
+    create all the matices we plan to work with
+    """
 
-#     P3x3 permutation matrix
+    #     P3x3 permutation matrix
 #     P11 P12 P13
 #     P21 P22 P23
 #     P31 P32 P33
@@ -138,26 +141,26 @@ def matrixPlotRoutines():
     plt.ylabel(ylabel="Y AXIS", loc="center")
     plt.grid(visible=True)
     # Define the vectors
-    V1 = np.array([1, 1])
-    V2 = np.array([-0.5, 0.5])
-    V1Times2 = 2 * V1
-    NegV1 = -V1
-    V1PV2 = V1 + V2
-    CTV1 = 2 * V1
-    VTV = V1 * V2
+    v1 = np.array([1, 1])
+    v2 = np.array([-0.5, 0.5])
+    #v1times2 = 2 * V1
+    #negv1 = -V1
+    v1pv2 = v1 + v2
+    ctv1 = 2 * v1
+    vtv = v1 * v2
 
-    X1, Y1 = V1[0], V1[1]
-    X2, Y2 = V2[0], V2[1]
-    X3, Y3 = CTV1[0], CTV1[1]
-    X4, Y4 = V1PV2[0], V1PV2[1]
-    X5, Y5 = VTV[0], VTV[1]
+    x1, y1 = v1[0], v1[1]
+    x2, y2 = v2[0], v2[1]
+    x3, y3 = ctv1[0], ctv1[1]
+    x4, y4 = v1pv2[0], v1pv2[1]
+    x5, y5 = vtv[0], vtv[1]
 
     # colors b, g, r, c, m, y, k, w
-    ax.quiver(0, 0, X1, Y1, angles='xy', scale_units='xy', scale=1, color='r')
-    ax.quiver(0, 0, X2, Y2, angles='xy', scale_units='xy', scale=1, color='g')
-    ax.quiver(0, 0, X3, Y3, angles='xy', scale_units='xy', scale=1, color='y')
-    ax.quiver(0, 0, X4, Y4, angles='xy', scale_units='xy', scale=1, color='c')
-    ax.quiver(0, 0, X5, Y5, angles='xy', scale_units='xy', scale=1, color='m')
+    ax.quiver(0, 0, x1, y1, angles='xy', scale_units='xy', scale=1, color='r')
+    ax.quiver(0, 0, x2, y2, angles='xy', scale_units='xy', scale=1, color='g')
+    ax.quiver(0, 0, x3, y3, angles='xy', scale_units='xy', scale=1, color='y')
+    ax.quiver(0, 0, x4, y4, angles='xy', scale_units='xy', scale=1, color='c')
+    ax.quiver(0, 0, x5, y5, angles='xy', scale_units='xy', scale=1, color='m')
     #ax.quiver(0, 0, -1*X, -1*Y, angles='xy', scale_units='xy', scale=1, color='g')
     #ax.quiver(0, 0, 5*X, 5*Y, angles='xy', scale_units='xy', scale=1, color='y')
     #ax.quiver(0, 0, -5*X, -5*Y, angles='xy', scale_units='xy', scale=1, color='c')

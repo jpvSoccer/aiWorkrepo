@@ -4,7 +4,7 @@ jvogel functions for matrix work
 import jpv_functions as mf
 import numpy as np
 mf.enable_jpv_debugging_features()
-mf.defineAllMatrices()
+mf.define_all_matrices()
 
 assert mf.jpvDebug == "True", "WARNING: jpvDebug not enabled"
 
