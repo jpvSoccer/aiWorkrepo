@@ -1,9 +1,9 @@
 """
 jvogel functions for matrix work
 """
-import jpvFunctions as mf
+import jpv_functions as mf
 import numpy as np
-mf.enableJpvDebuggingFeatures()
+mf.enable_jpv_debugging_features()
 mf.defineAllMatrices()
 
 assert mf.jpvDebug == "True", "WARNING: jpvDebug not enabled"

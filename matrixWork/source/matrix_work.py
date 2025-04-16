@@ -8,7 +8,7 @@ linear algebra
 #import os
 #import matplotlib.pyplot as plt
 #import numpy as np
-import jpvFunctions as mf
+import jpv_functions as mf
 #import jpvAssertions
 
 #mf.getPythonPath()

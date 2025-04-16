@@ -1,20 +1,27 @@
-import numpy as np
+"""
+misc functions for matrices and python even and control
+"""
 import os
+import numpy as np
 import matplotlib.pyplot as plt
 
-def getPythonPath():
-   pythonPathEnv = os.getenv("PYTHONPATH")
-   print("pythonPathEnv is \n",pythonPathEnv)
-   return
+def get_python_path():
+    """
+    get python env path
+    """
+    python_path_env = os.getenv("PYTHONPATH")
+    print("python_path_env is \n",python_path_env)
 
-def enableJpvDebuggingFeatures():
+def enable_jpv_debugging_features():
+    """
+    enable jpv-tagged debugging features
+    """
     global jpvDebug
     jpvDebug = os.getenv("JPVDEBUG")
     if jpvDebug == "True":
         print("JPVDEBUG on")
     else:
         print("JPVDEBUG off")
-    return
 
 def defineAllMatrices():
 
@@ -108,7 +115,6 @@ def defineAllMatrices():
 
     M_3x3_111_222_333 = np.array([[1, 1, 1], [2, 2, 2], [3, 3, 3]])
     M_3x3_123_456_789 = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
-    return
 
 def matrixPlotRoutines():
     # cmap values
@@ -157,4 +163,3 @@ def matrixPlotRoutines():
     #ax.quiver(0, 0, -5*X, -5*Y, angles='xy', scale_units='xy', scale=1, color='c')
     #plt.savefig("fig.png")
     #plt.show()
-    return
